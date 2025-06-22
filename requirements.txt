@@ -1,0 +1,8 @@
+streamlit
+pandas
+numpy
+requests
+pydeck
+os
+collections
+math
