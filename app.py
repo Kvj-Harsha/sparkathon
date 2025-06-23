@@ -148,7 +148,19 @@ if source and destination:
             # Step 3: Map
             st.subheader("📻 Route with Weather Conditions")
 
-            route_layer = pdk.Layer("PathLayer", data=[{"path": geometry}], get_path="path", get_width=4, get_color=[0, 0, 200])
+            route_df = pd.DataFrame([{"path": geometry}])
+            
+            route_layer = pdk.Layer(
+                "PathLayer",
+                data=route_df,
+                get_path="path",
+                get_width=4,
+                get_color=[0, 0, 255],  # blue
+                width_scale=1,
+                width_min_pixels=2,
+                pickable=False
+            )
+
             weather_layer = pdk.Layer(
                 "ScatterplotLayer",
                 data=df,
@@ -157,9 +169,13 @@ if source and destination:
                 get_fill_color='[200, 30, 0, 160]',
                 pickable=True
             )
+
             view = pdk.ViewState(latitude=np.mean(df["lat"]), longitude=np.mean(df["lon"]), zoom=6)
-            st.pydeck_chart(pdk.Deck(layers=[route_layer, weather_layer], initial_view_state=view,
-                                     tooltip={"text": "{Place}: {temp}°C, {desc}, Risk: {risk}, Status: {status}"}))
+            st.pydeck_chart(pdk.Deck(
+                layers=[route_layer, weather_layer],
+                initial_view_state=view,
+                tooltip={"text": "{Place}: {temp}°C, {desc}, Risk: {risk}, Status: {status}"}
+            ))
 
             st.subheader("🌧️ Weather Conditions Along Route")
             st.dataframe(df)

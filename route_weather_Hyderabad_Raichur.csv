@@ -1,0 +1,7 @@
+Segment,Place,lat,lon,temp,wind,desc,risk,status
+1,Hyderabad,17.360505,78.474462,30.37,9.09,Overcast clouds,Low,Safe
+2,"NH44, Pittalaguda, Nandigama, Nandigama mandal, Ranga Reddy, Telangana, 509228, India",17.114972,78.266726,29.67,9.94,Overcast clouds,Low,Safe
+3,Mahbubnagar,16.753219,78.029131,29.72,9.5,Overcast clouds,Low,Safe
+4,"NH167, Makthal mandal, Marikal mandal, Narayanpet, Telangana, India",16.582374,77.665663,31.46,9.17,Overcast clouds,Low,Safe
+5,"Yeramarasa, Rayachuru taluku, Raichur, Karnataka, 584134, India",16.251682,77.354922,31.25,10.26,Overcast clouds,Low,Safe
+6,"Chagabhavi, Siravara taluku, Raichur, Karnataka, 584129, India",16.079628,76.954007,30.88,10.17,Overcast clouds,Low,Safe
